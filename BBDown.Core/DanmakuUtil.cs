@@ -11,7 +11,7 @@ namespace BBDown.Core
         private const int FONT_SIZE = 40;               //字体大小
         private const double MOVE_SPEND_TIME = 18.00;    //单条条滚动弹幕存在时间（控制速度）
         private const double TOP_SPEND_TIME = 5.00;     //单条顶部或底部弹幕存在时间
-        private const int PROTECT_LENGTH = 20;          //滚动弹幕屏占百分比
+        private const int PROTECT_LENGTH = 25;          //滚动弹幕屏占百分比
         public static readonly DanmakuComparer comparer = new();
 
         /*public static async Task DownloadAsync(Page p, string xmlPath, bool aria2c, string aria2cProxy)
@@ -119,7 +119,7 @@ namespace BBDown.Core
 
         protected class PositionController
         {
-            private const int MARGIN = 5;
+            private const int MARGIN = 10;
 	    readonly int maxLine = MONITOR_HEIGHT * PROTECT_LENGTH / FONT_SIZE / 100;    //总行数
                                                                                         // 三个位置的弹幕队列，记录弹幕结束时间
 
