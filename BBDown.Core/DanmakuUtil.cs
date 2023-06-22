@@ -9,9 +9,9 @@ namespace BBDown.Core
         private const int MONITOR_WIDTH = 1920;         //渲染字幕时的渲染范围的高度
         private const int MONITOR_HEIGHT = 1080;        //渲染字幕时的渲染范围的高度
         private const int FONT_SIZE = 40;               //字体大小
-        private const double MOVE_SPEND_TIME = 8.00;    //单条条滚动弹幕存在时间（控制速度）
-        private const double TOP_SPEND_TIME = 4.00;     //单条顶部或底部弹幕存在时间
-        private const int PROTECT_LENGTH = 50;          //滚动弹幕屏占百分比
+        private const double MOVE_SPEND_TIME = 15.00;    //单条条滚动弹幕存在时间（控制速度）
+        private const double TOP_SPEND_TIME = 5.00;     //单条顶部或底部弹幕存在时间
+        private const int PROTECT_LENGTH = 20;          //滚动弹幕屏占百分比
         public static readonly DanmakuComparer comparer = new();
 
         /*public static async Task DownloadAsync(Page p, string xmlPath, bool aria2c, string aria2cProxy)
