@@ -22,7 +22,7 @@ jobs:
           include-prerelease: true
 
       - run: dotnet publish BBDown -r win-x64 -c Release -o artifact-x64
-      - run: dotnet publish BBDown -r win-arm64 -c Release -o artifact-arm64
+
 
       - name: Upload Artifact[win-x64]
         uses: actions/upload-artifact@v1.0.0
@@ -30,9 +30,5 @@ jobs:
           name: BBDown_win-x64
           path: artifact-x64\BBDown.exe
 
-      - name: Upload Artifact[win-arm64]
-        uses: actions/upload-artifact@v1.0.0
-        with:
-          name: BBDown_win-arm64
-          path: artifact-arm64\BBDown.exe
+
   
