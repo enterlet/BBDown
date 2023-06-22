@@ -9,7 +9,7 @@ namespace BBDown.Core
         private const int MONITOR_WIDTH = 1920;         //渲染字幕时的渲染范围的高度
         private const int MONITOR_HEIGHT = 1080;        //渲染字幕时的渲染范围的高度
         private const int FONT_SIZE = 40;               //字体大小
-        private const double MOVE_SPEND_TIME = 15.00;    //单条条滚动弹幕存在时间（控制速度）
+        private const double MOVE_SPEND_TIME = 18.00;    //单条条滚动弹幕存在时间（控制速度）
         private const double TOP_SPEND_TIME = 5.00;     //单条顶部或底部弹幕存在时间
         private const int PROTECT_LENGTH = 20;          //滚动弹幕屏占百分比
         public static readonly DanmakuComparer comparer = new();
@@ -119,7 +119,8 @@ namespace BBDown.Core
 
         protected class PositionController
         {
-            readonly int maxLine = MONITOR_HEIGHT * PROTECT_LENGTH / FONT_SIZE / 100;    //总行数
+            private const int MARGIN = 5;
+	    readonly int maxLine = MONITOR_HEIGHT * PROTECT_LENGTH / FONT_SIZE / 100;    //总行数
                                                                                         // 三个位置的弹幕队列，记录弹幕结束时间
 
             readonly List<double> moveQueue = new();
@@ -159,7 +160,7 @@ namespace BBDown.Core
                     if (time >= vs[i])
                     {   // 此条弹幕已结束，更新该位置信息
                         vs[i] = time + displayTime;
-                        return i * FONT_SIZE;
+                        return i * (FONT_SIZE + MARGIN);
                     }
                 }
                 return -1;
